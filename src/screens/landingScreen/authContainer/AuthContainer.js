@@ -7,7 +7,18 @@ const AuthContainer = ({ navigation }) => {
 
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.container}>
+      <Text
+        style={{
+          width: "100%",
+          textAlign: "center",
+          fontSize: 24,
+          color: "white",
+          paddingTop: 10,
+        }}
+      >
+        Welcome Back!
+      </Text>
+      {/* <View style={styles.container}>
         <View style={[styles.buttonContainer, styles.isSelected]}>
           <TouchableOpacity
             style={styles.button}
@@ -28,7 +39,7 @@ const AuthContainer = ({ navigation }) => {
             <Text style={styles.text}>Sign Up</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 };
