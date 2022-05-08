@@ -11,15 +11,15 @@ const LandingScreen = ({ navigation }) => {
   return (
     <ScrollView style={styles.container}>
       <BannerImage />
-      <AuthContainer colors={colors} navigation={navigation} />
-      <Login navigation={navigation} colors={colors} />
+      <AuthContainer navigation={navigation} />
+      <Login navigation={navigation} />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.white,
+    backgroundColor: "gray",
   },
   helpContainer: {
     paddingHorizontal: config.wp("4%"),
