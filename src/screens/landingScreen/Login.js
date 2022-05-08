@@ -124,6 +124,7 @@ const Login = ({ navigation }) => {
                 <View style={styles.inputContainer}>
                   <View style={styles.inputView}>
                     <TextInput
+                      placeholderTextColor={"gray"}
                       underlineColor="gray"
                       style={styles.input}
                       label="Email"
@@ -135,6 +136,7 @@ const Login = ({ navigation }) => {
 
                   <View style={styles.inputView}>
                     <TextInput
+                      placeholderTextColor={"gray"}
                       underlineColor="gray"
                       style={styles.input}
                       label="Password"

@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     height: config.hp("22%"),
     paddingHorizontal: config.wp("4%"),
     overflow: "hidden",
+    paddingTop: 10,
   },
   inputContainer: {
     display: "flex",
@@ -22,9 +23,12 @@ export const styles = StyleSheet.create({
   },
   input: {
     // height: config.deviceHeight * 0.09,
-    height: config.hp("10%"),
+    height: 65,
     backgroundColor: "white",
     fontSize: config.hp("2.15%"),
+    borderRadius: 25,
+    color: "black",
+    paddingHorizontal: 10,
   },
   inputTry: {
     flex: 1,
