@@ -82,8 +82,8 @@ const StoreNavigator = () => {
           },
         })}
       ></Stack.Screen>
-      {/* 
-      <Stack.Screen
+
+      {/* <Stack.Screen
         name="Checkout"
         component={CheckoutScreen}
         options={({ navigation }) => ({

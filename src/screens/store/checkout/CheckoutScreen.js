@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
-import { useStripe, CardField } from "@stripe/stripe-react-native";
+//import { useStripe, CardField } from "@stripe/stripe-react-native";
 import axios from "axios";
 import { theme } from "../../../config/Theme";
 import { config } from "../../../config/Config";
 import ErrorModal from "../../../components/modals/ErrorModal";
-import logo from "../../../../assets/Stripe.png";
+import logo from "../../../../assets/stripe.svg";
 
 const CheckoutScreen = ({ navigation }) => {
   const [showError, setShowError] = useState(false);
@@ -84,7 +84,7 @@ const CheckoutScreen = ({ navigation }) => {
         <View>
           <Text style={{ fontSize: 18 }}>
             By proceeding with payment, you are agreeing to the terms and
-            conditions listed{" "}
+            conditions listed
             <Text
               style={{
                 fontSize: 20,
@@ -95,7 +95,7 @@ const CheckoutScreen = ({ navigation }) => {
               }}
             >
               here.
-            </Text>{" "}
+            </Text>
             We encourage you to thorougly read the terms and conditions when
             purchasing any audio productions.
           </Text>
@@ -151,7 +151,14 @@ const CheckoutScreen = ({ navigation }) => {
             borderRadius: "12%",
           }}
         >
-          <Text style={{ fontSize: 20, color: "white", textAlign: "center" }}>
+          <Text
+            style={{
+              fontSize: 20,
+              color: "white",
+              textAlign: "center",
+              fontWeight: "700",
+            }}
+          >
             Proceed To Payment
           </Text>
         </TouchableOpacity>
