@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Jays World",
+    "name": "Jays-World",
     "slug": "JaysWorld-App",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -14,6 +14,7 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
+    
     "ios": {
       "bundleIdentifier": "com.jays-world.jaysworld",
       "buildNumber": "1.0.0",
