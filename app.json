@@ -2,7 +2,7 @@
   "expo": {
     "name": "Jays-World",
     "slug": "JaysWorld-App",
-    "version": "1.1.5",
+    "version": "1.1.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -19,8 +19,12 @@
       "bundleIdentifier": "com.jays-world.jaysworld",
       "buildNumber": "1.0.0",
       "supportsTablet": false,
-
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {

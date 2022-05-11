@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import LottieView from "lottie-react-native";
+//import LottieView from "lottie-react-native";
 import { theme } from "../../../config/Theme";
 import { config } from "../../../config/Config";
 import { Feather, FontAwesome5 } from "@expo/vector-icons";
@@ -16,7 +16,7 @@ const CheckoutSuccess = ({ navigation }) => {
           paddingTop: 25,
         }}
       >
-        <LottieView
+        {/* <LottieView
           loop={false}
           autoPlay
           style={{
@@ -24,7 +24,7 @@ const CheckoutSuccess = ({ navigation }) => {
             height: 160,
           }}
           source={require("../../../../assets/lottieFiles/success.json")}
-        />
+        /> */}
       </View>
       <Text
         style={{
