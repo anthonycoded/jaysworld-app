@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { View, Text } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as SplashScreen from "expo-splash-screen";
 import AppNavigation from "./src/navigation/AppNavigation";
@@ -43,7 +44,7 @@ const AppWrapper = () => {
   }
   return (
     <GestureHandlerRootView
-      style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+      style={{ flex: 1, justifyContent: "center" }}
       onLayout={onLayoutRootView}
     >
       <AppNavigation />

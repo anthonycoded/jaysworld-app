@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     height: config.hp("22%"),
     paddingHorizontal: config.wp("4%"),
     overflow: "hidden",
+    paddingTop: 10,
   },
   inputContainer: {
     display: "flex",
@@ -22,9 +23,12 @@ export const styles = StyleSheet.create({
   },
   input: {
     // height: config.deviceHeight * 0.09,
-    height: config.hp("10%"),
+    height: 60,
     backgroundColor: "white",
     fontSize: config.hp("2.15%"),
+    borderRadius: 30,
+    color: "black",
+    paddingHorizontal: 10,
   },
   inputTry: {
     flex: 1,
@@ -42,13 +46,13 @@ export const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: config.hp("3%"),
+    paddingVertical: config.hp("2%"),
     paddingHorizontal: config.wp("2%"),
   },
   button: {
     backgroundColor: theme.colors.primary,
     borderRadius: config.hp(".5%"),
-    paddingVertical: config.hp("1.35%"),
+    paddingVertical: config.hp("2%"),
     width: "100%",
     elevation: config.hp(".5%"),
   },
