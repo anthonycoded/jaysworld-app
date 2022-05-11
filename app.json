@@ -19,11 +19,10 @@
       "bundleIdentifier": "com.jays-world.jaysworld",
       "buildNumber": "1.0.0",
       "supportsTablet": false,
+
       "requireFullScreen": true,
       "infoPlist": {
-        "UIBackgroundModes": [
-          "audio"
-        ]
+        "UIBackgroundModes": ["audio"]
       }
     },
     "android": {
