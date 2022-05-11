@@ -19,7 +19,10 @@
       "buildNumber": "1.0.0",
       "supportsTablet": false,
 
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"]
+      }
     },
     "android": {
       "adaptiveIcon": {
