@@ -20,16 +20,7 @@ import { formatMilliseconds } from "../../utils/utils";
 import { RecentlyPlayed, SelectTrack } from "../../store/actions/PlayerActions";
 import { AddToRecentlyPlayed } from "./functions/Shuffle";
 
-const PlayerControls = async ({ expanded }) => {
-  await Audio.setAudioModeAsync({
-    allowsRecordingIOS: false,
-    interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
-    playsInSilentModeIOS: true,
-    interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-    shouldDuckAndroid: true,
-    staysActiveInBackground: true,
-    playThroughEarpieceAndroid: true,
-  });
+const PlayerControls = ({ expanded }) => {
   const playbackInstance = useRef(new Audio.Sound());
   const player = useSelector((state) => state.player); //Get current track id
   const songs = useSelector((state) => state.songs); //Get all songs
@@ -65,6 +56,16 @@ const PlayerControls = async ({ expanded }) => {
 
   async function init() {
     try {
+      await Audio.setAudioModeAsync({
+        playsInSilentModeIOS: true,
+        allowsRecordingIOS: false,
+        staysActiveInBackground: true,
+        //interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+        shouldDuckAndroid: true,
+        //interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+        playThroughEarpieceAndroid: true,
+      });
+      console.log(Audio);
     } catch (e) {
       console.log(e);
     }
