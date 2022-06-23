@@ -9,7 +9,7 @@ import MusicDetailScreen from "../screens/store/sections/musicDetails/MusicDetai
 import GoBack from "../components/GoBack";
 import CartButton from "../components/CartButton";
 import CartScreen from "../screens/store/cart/CartScreen";
-//import CheckoutScreen from "../screens/store/checkout/CheckoutScreen";
+import CheckoutScreen from "../screens/store/checkout/CheckoutScreen";
 import CheckoutSuccess from "../screens/store/checkout/CheckoutSuccess";
 
 const Stack = createNativeStackNavigator();
@@ -83,7 +83,7 @@ const StoreNavigator = () => {
         })}
       ></Stack.Screen>
 
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Checkout"
         component={CheckoutScreen}
         options={({ navigation }) => ({
@@ -95,7 +95,7 @@ const StoreNavigator = () => {
             return <GoBack navigation={navigation} />;
           },
         })}
-      ></Stack.Screen> */}
+      ></Stack.Screen>
       <Stack.Screen
         name="CheckoutSuccess"
         component={CheckoutSuccess}
