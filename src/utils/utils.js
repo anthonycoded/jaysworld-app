@@ -17,3 +17,7 @@ export function formatMilliseconds(milliseconds, padStart) {
     ? `${padStart ? pad(hours) : hours}:${pad(minutes)}:${pad(seconds)}`
     : `${padStart ? pad(minutes) : minutes}:${pad(seconds)}`;
 }
+
+export const wait = (timeout) => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+};
