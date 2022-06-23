@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
-//import { useStripe, CardField } from "@stripe/stripe-react-native";
+import { useStripe, CardField } from "@stripe/stripe-react-native";
 import axios from "axios";
 import { theme } from "../../../config/Theme";
 import { config } from "../../../config/Config";
