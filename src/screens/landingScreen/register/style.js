@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { config } from "../../config/Config";
-import { theme } from "../../config/Theme";
+import { config } from "../../../config/Config";
+import { theme } from "../../../config/Theme";
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: config.wp("4%"),
     overflow: "hidden",
     paddingVertical: 10,
+    height: "100%",
   },
   inputContainer: {
     display: "flex",
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   inputView: {
     width: "100%",
-    height: config.hp("9%"),
+    //height: config.hp("9%"),
   },
   input: {
     // height: config.deviceHeight * 0.09,
@@ -27,6 +28,7 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     color: "black",
     paddingHorizontal: 10,
+    marginBottom: config.hp("2%"),
   },
   inputTry: {
     flex: 1,
