@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { View, Text } from "react-native";
+import { useDispatch } from "react-redux";
+import { GetBeats } from "./src/store/actions/beatActions";
+import { GetSongs } from "./src/store/actions/songActions";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as SplashScreen from "expo-splash-screen";
 import AppNavigation from "./src/navigation/AppNavigation";
 
 const AppWrapper = () => {
   const [appIsReady, setAppIsReady] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function prepare() {
@@ -14,9 +18,8 @@ const AppWrapper = () => {
         await SplashScreen.preventAutoHideAsync();
         // Pre-load fonts, make any API calls you need to do here
         //await Font.loadAsync(Entypo.font);
-        // Artificially delay for two seconds to simulate a slow loading
-        // experience. Please remove this if you copy and paste the code!
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        dispatch(GetBeats());
+        dispatch(GetSongs());
       } catch (e) {
         console.warn(e);
       } finally {
