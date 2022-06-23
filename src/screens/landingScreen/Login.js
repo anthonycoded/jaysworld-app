@@ -15,11 +15,10 @@ import LottieView from "lottie-react-native";
 
 import { styles } from "./style";
 import { userLoginMain } from "../../store/actions/authActions";
-import { GetBeats } from "../../store/actions/beatActions";
-import { GetSongs } from "../../store/actions/songActions";
+
 import ErrorModal from "../../components/modals/ErrorModal";
 
-const Login = ({ navigation }) => {
+const Login = ({ navigation, setTab }) => {
   const profile = useSelector((state) => state.profile);
   const accounts = useSelector((state) => state.accounts);
   const auth = useSelector((state) => state.auth);
@@ -60,11 +59,8 @@ const Login = ({ navigation }) => {
   async function LoginHandler(auth) {
     try {
       if (auth?.success) {
-        dispatch(GetBeats());
-        dispatch(GetSongs());
-
-        setLoading(false); //Remove Loading Spinner
         await navigation.navigate("Drawer"); //Navigate to home screen
+        setLoading(false); //Remove Loading Spinner
       } else if (auth?.success == false && auth?.error) {
         //Auth Failed
         setLoading(false); //Remove Loading Spinner
@@ -120,6 +116,17 @@ const Login = ({ navigation }) => {
             </View>
           ) : (
             <View>
+              <Text
+                style={{
+                  width: "100%",
+                  textAlign: "center",
+                  fontSize: 24,
+                  color: "white",
+                  paddingTop: 10,
+                }}
+              >
+                Welcome Back!
+              </Text>
               <View style={styles.container}>
                 <View style={styles.inputContainer}>
                   <View style={styles.inputView}>
@@ -146,9 +153,17 @@ const Login = ({ navigation }) => {
                       secureTextEntry
                       textContentType="password"
                     />
+                    <TouchableOpacity
+                      onPress={() => navigation.navigate("Forgot")}
+                    >
+                      <Text style={{ paddingVertical: 10 }}>
+                        Forgot Password?
+                      </Text>
+                    </TouchableOpacity>
                   </View>
                 </View>
               </View>
+
               <View style={styles.switchContainer}>
                 <Text style={styles.switchText}>Remember User ID</Text>
                 <Switch
@@ -168,8 +183,10 @@ const Login = ({ navigation }) => {
                 >
                   <Text style={styles.buttonText}>Sign In with password</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
-                  <Text style={{ paddingVertical: 10 }}>Forgot Password?</Text>
+                <TouchableOpacity onPress={() => setTab("Register")}>
+                  <Text style={{ paddingVertical: 10 }}>
+                    Need an account? Sign up
+                  </Text>
                 </TouchableOpacity>
               </View>
             </View>
