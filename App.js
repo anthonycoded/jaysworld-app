@@ -4,8 +4,10 @@ import store from "./src/store/Store";
 import { StatusBar } from "expo-status-bar";
 import AppWrapper from "./AppWrapper";
 import { StripeProvider } from "@stripe/stripe-react-native";
+import { LogBox } from "react-native";
 
 function App() {
+  LogBox.ignoreLogs(["exported from 'deprecated-react-native-prop-types'."]);
   return (
     <Provider store={store}>
       <StripeProvider
