@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
-
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Login from "./Login";
 import { config } from "../../config/Config";
 import { theme } from "../../config/Theme";
@@ -12,7 +12,7 @@ const LandingScreen = ({ navigation }) => {
   const [tab, setTab] = useState("Login");
 
   return (
-    <ScrollView style={styles.container}>
+    <KeyboardAwareScrollView style={styles.container}>
       <BannerImage />
       {/* <AuthContainer navigation={navigation} /> */}
       {tab == "Login" ? (
@@ -20,7 +20,7 @@ const LandingScreen = ({ navigation }) => {
       ) : (
         <Register navigation={navigation} setTab={setTab}></Register>
       )}
-    </ScrollView>
+    </KeyboardAwareScrollView>
   );
 };
 
