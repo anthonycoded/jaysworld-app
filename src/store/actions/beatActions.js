@@ -1,4 +1,5 @@
 import axios from "axios";
+import Global from "../../utils/Global";
 const Get_All_Beats = "Get_All_Beats";
 const New_Beat = "New_Beat";
 
@@ -36,9 +37,7 @@ export const PublishBeat = (payload) => async (dispatch) => {
 
 export const GetBeats = () => async (dispatch) => {
   try {
-    let response = await axios.get(
-      "https://jaysworld-cb39f.uc.r.appspot.com/beats/get-all"
-    );
+    let response = await axios.get(Global.GetBeats);
     const data = response.data;
 
     if (response.status == 200) {
