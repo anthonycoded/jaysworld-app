@@ -11,6 +11,10 @@ import { theme } from "../config/Theme";
 
 const DrawerContent = ({ navigation }) => {
   const { colors } = theme;
+
+  function logout() {
+    navigation.navigate("Login");
+  }
   const styles = StyleSheet.create({
     drawerContent: {
       flex: 1,
