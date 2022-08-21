@@ -5,7 +5,6 @@ import { theme } from "../../../config/Theme";
 export const styles = StyleSheet.create({
   container: {
     width: "100%",
-
     paddingHorizontal: config.wp("4%"),
     overflow: "hidden",
     paddingVertical: 10,
@@ -22,10 +21,10 @@ export const styles = StyleSheet.create({
   },
   input: {
     // height: config.deviceHeight * 0.09,
-    height: 55,
+    height: config.hp("5%"),
     backgroundColor: "white",
     fontSize: config.hp("2.15%"),
-    borderRadius: 20,
+    borderRadius: 12,
     color: "black",
     paddingHorizontal: 10,
     marginBottom: config.hp("2%"),
