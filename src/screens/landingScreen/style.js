@@ -5,7 +5,6 @@ import { theme } from "../../config/Theme";
 export const styles = StyleSheet.create({
   container: {
     width: "100%",
-
     paddingHorizontal: config.wp("4%"),
     overflow: "hidden",
     paddingVertical: 10,
@@ -13,7 +12,8 @@ export const styles = StyleSheet.create({
   inputContainer: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-start",
+    justifyContent: "center",
+    paddingHorizontal: config.wp("4%"),
   },
   inputView: {
     width: "100%",
@@ -21,12 +21,13 @@ export const styles = StyleSheet.create({
   },
   input: {
     // height: config.deviceHeight * 0.09,
-    height: 55,
+    height: config.hp("6%"),
     backgroundColor: "white",
     fontSize: config.hp("2.15%"),
-    borderRadius: 20,
+    borderRadius: 7,
     color: "black",
     paddingHorizontal: 10,
+    marginBottom: config.hp("2%"),
   },
   inputTry: {
     flex: 1,
@@ -37,20 +38,21 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: config.hp("7%"),
     paddingHorizontal: config.wp("2%"),
-    height: "60%",
+    //height: "60%",
     marginTop: config.hp("4%"),
   },
   buttonContainer: {
-    display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: config.hp("2%"),
+    //paddingVertical: config.hp("2%"),
     paddingHorizontal: config.wp("2%"),
+    height: config.hp("25%"),
+    //backgroundColor: "red",
   },
   button: {
     backgroundColor: theme.colors.primary,
     borderRadius: config.hp(".5%"),
-    paddingVertical: config.hp("2%"),
+    paddingVertical: config.hp("1%"),
     width: "100%",
     elevation: config.hp(".5%"),
   },
@@ -70,7 +72,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 25,
     paddingVertical: 10,
-    color: "gray",
+    //color: "gray",
   },
   switchText: {
     color: "gray",
