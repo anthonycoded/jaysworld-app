@@ -26,7 +26,8 @@ const LandingScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "gray",
+    backgroundColor: theme.colors.fadedLight,
+    height: "100%",
   },
   helpContainer: {
     paddingHorizontal: config.wp("4%"),
