@@ -6,6 +6,9 @@ export const lightTheme = {
   roundness: 5,
   colors: {
     primary: "#549FFC",
+    fadedLight: "#ededed",
+    faded: "rgb(168, 168, 168)",
+    fadedDark: "#5F5F60",
     accent: "#B6CDFE",
     hint: "#D0D0D0",
     background: "white",
