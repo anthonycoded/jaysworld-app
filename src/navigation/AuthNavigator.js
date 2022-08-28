@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 
 import Header from "../components/Header";
 import LandingScreen from "../screens/landingScreen/LandingScreen";
+import Onboarding from "../screens/onboarding/Onboarding";
 
 const AuthNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -19,6 +20,14 @@ const AuthNavigator = () => {
             headerShown: true,
             headerBackVisible: false,
           }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="Onboarding"
+          component={Onboarding}
+          options={({ navigation }) => ({
+            headerShown: false,
+            headerBackVisible: false,
+          })}
         ></Stack.Screen>
       </Stack.Navigator>
     </>
