@@ -57,7 +57,7 @@ const Register = ({ navigation, setTab, handleChange }) => {
 
     switch (authStatus) {
       case "Success":
-        navigation.navigate("Drawer");
+        navigation.navigate("Onboarding");
         setStatus({
           ...state,
           loading: false,
@@ -87,121 +87,137 @@ const Register = ({ navigation, setTab, handleChange }) => {
   }, [state]);
 
   return (
-    <View style={{ alignItems: "center", width: "100%" }}>
+    <View style={{ alignItems: "center", width: "100%", height: "65%" }}>
       <Text
         style={{
-          fontSize: 22,
-          fontWeight: "bold",
+          fontSize: 24,
+          //fontWeight: "bold",
           marginBottom: config.hp("1%"),
-          color: "white",
+          color: theme.colors.primary,
         }}
       >
         Register
       </Text>
 
-      <View style={styles.container}>
-        {status.loading ? (
-          <View
+      {status.loading ? (
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "flex-start",
+            height: "100%",
+            paddingTop: 25,
+            width: "100%",
+          }}
+        >
+          <LottieView
+            loop
+            autoPlay
             style={{
-              alignItems: "center",
-              justifyContent: "flex-start",
-              height: "100%",
-              paddingTop: 25,
-              width: "100%",
+              width: 160,
+              height: 160,
             }}
-          >
-            <LottieView
-              loop
-              autoPlay
+            source={require("../../../../assets/lottieFiles/loading-spinner.json")}
+          />
+          <Text>Loading</Text>
+        </View>
+      ) : (
+        <View style={styles.container}>
+          <View style={styles.inputContainer}>
+            <Text
               style={{
-                width: 160,
-                height: 160,
-              }}
-              source={require("../../../../assets/lottieFiles/loading-spinner.json")}
-            />
-            <Text>Loading</Text>
-          </View>
-        ) : (
-          <>
-            <View style={styles.inputContainer}>
-              <View style={styles.inputView}>
-                <TextInput
-                  placeholderTextColor={"gray"}
-                  underlineColor="gray"
-                  style={styles.input}
-                  label="username"
-                  placeholder="Enter your username"
-                  onChangeText={(value) => handleChange("username", value)}
-                  textContentType="username"
-                />
-                <TextInput
-                  placeholderTextColor={"gray"}
-                  underlineColor="gray"
-                  style={styles.input}
-                  label="Email"
-                  placeholder="Enter your email"
-                  onChangeText={(value) => handleChange("email", value)}
-                  textContentType="email"
-                />
-              </View>
-
-              <View style={styles.inputView}>
-                <TextInput
-                  placeholderTextColor={"gray"}
-                  underlineColor="gray"
-                  style={styles.input}
-                  label="Password"
-                  placeholder="Enter your Password"
-                  onChangeText={(value) => handleChange("password", value)}
-                  //value={user.password}
-                  secureTextEntry
-                  textContentType="password"
-                />
-                <TextInput
-                  placeholderTextColor={"gray"}
-                  underlineColor="gray"
-                  style={styles.input}
-                  label="Password"
-                  placeholder="Confirm Password"
-                  onChangeText={(value) => handleChange("password", value)}
-                  //value={user.password}
-                  secureTextEntry
-                  textContentType="password"
-                />
-              </View>
-            </View>
-            <View
-              style={{
-                //flex: 1,
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "flex-end",
-                paddingTop: config.hp("2%"),
+                fontSize: 18,
+                marginBottom: config.hp(".5%"),
+                color: theme.colors.primary,
               }}
             >
-              <TouchableOpacity
-                onPress={submit}
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: config.wp("80"),
-                  backgroundColor: theme.colors.primary,
-                  paddingVertical: config.hp("1%"),
-                  borderRadius: 7,
-                }}
-              >
-                <Text style={{ fontSize: 18, color: "white" }}>Continue</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => setTab("Login")}>
-                <Text style={{ paddingVertical: 10 }}>
-                  Already have an account, Login.
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </>
-        )}
-      </View>
+              Create a Username
+            </Text>
+            <TextInput
+              placeholderTextColor={"gray"}
+              underlineColor="gray"
+              style={styles.input}
+              label="username"
+              placeholder="Enter your username"
+              onChangeText={(value) => handleChange("username", value)}
+              textContentType="username"
+            />
+            <Text
+              style={{
+                fontSize: 18,
+
+                color: theme.colors.primary,
+              }}
+            >
+              Set up Password
+            </Text>
+            <Text style={{ fontSize: 12, marginBottom: config.hp("1%") }}>
+              Must be at least 8 characters long and contain at least 1 number,
+              and 1 capitalized letter
+            </Text>
+            <TextInput
+              placeholderTextColor={"gray"}
+              underlineColor="gray"
+              style={styles.input}
+              label="Email"
+              placeholder="Enter a password"
+              onChangeText={(value) => handleChange("email", value)}
+              textContentType="email"
+            />
+
+            <Text
+              style={{
+                fontSize: 18,
+                marginBottom: config.hp(".5%"),
+                color: theme.colors.primary,
+              }}
+            >
+              Confirm Password
+            </Text>
+            <TextInput
+              placeholderTextColor={"gray"}
+              underlineColor="gray"
+              style={styles.input}
+              label="Password"
+              placeholder="Passwords must match"
+              onChangeText={(value) => handleChange("password", value)}
+              //value={user.password}
+              secureTextEntry
+              textContentType="password"
+            />
+          </View>
+
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingBottom: config.hp("8%"),
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Onboarding")}
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                width: config.wp("80"),
+                backgroundColor: theme.colors.primary,
+                paddingVertical: config.hp("1%"),
+                borderRadius: 7,
+              }}
+            >
+              <Text style={{ fontSize: 18, color: "white" }}>Continue</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setTab("Login")}>
+              <Text style={{ paddingVertical: 10 }}>
+                Already have an account, Login.
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+
       <ErrorModal
         showErrorModal={status.showError}
         error={status.error}

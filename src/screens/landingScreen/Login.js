@@ -17,6 +17,8 @@ import { styles } from "./style";
 import { userLoginMain } from "../../store/actions/authActions";
 
 import ErrorModal from "../../components/modals/ErrorModal";
+import { config } from "../../config/Config";
+import { theme } from "../../config/Theme";
 
 const Login = ({ navigation, setTab }) => {
   const profile = useSelector((state) => state.profile);
@@ -88,117 +90,127 @@ const Login = ({ navigation, setTab }) => {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "height" : "padding"}
+    <View
+      style={{ height: "100%" }}
+      //contentContainerStyle={{ height: "100%", backgroundColor: "red" }}
+      //behavior={Platform.OS === "ios" ? "height" : "padding"}
     >
-      <ScrollView>
-        <View style={{ paddingBottom: Platform.OS == "android" ? -200 : 50 }}>
-          {loading ? (
-            <View
+      {loading ? (
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "flex-start",
+            height: "100%",
+            paddingTop: 25,
+            width: "100%",
+          }}
+        >
+          <LottieView
+            loop
+            autoPlay
+            style={{
+              width: 160,
+              height: 160,
+            }}
+            source={require("../../../assets/lottieFiles/loading-spinner.json")}
+          />
+          <Text>Loading</Text>
+        </View>
+      ) : error ? (
+        <></>
+      ) : (
+        <View style={{ height: "100%" }}>
+          <Text
+            style={{
+              width: "100%",
+              textAlign: "center",
+              fontSize: 24,
+              color: theme.colors.primary,
+              paddingTop: 10,
+              marginBottom: config.hp("2%"),
+            }}
+          >
+            Welcome Back
+          </Text>
+
+          <View style={styles.inputContainer}>
+            <Text
               style={{
-                alignItems: "center",
-                justifyContent: "flex-start",
-                height: "100%",
-                paddingTop: 25,
-                width: "100%",
+                fontSize: 18,
+                marginBottom: config.hp(".5%"),
+                color: theme.colors.primary,
               }}
             >
-              <LottieView
-                loop
-                autoPlay
-                style={{
-                  width: 160,
-                  height: 160,
-                }}
-                source={require("../../../assets/lottieFiles/loading-spinner.json")}
-              />
-              <Text>Loading</Text>
-            </View>
-          ) : (
-            <View>
-              <Text
-                style={{
-                  width: "100%",
-                  textAlign: "center",
-                  fontSize: 24,
-                  color: "white",
-                  paddingTop: 10,
-                }}
-              >
-                Welcome Back!
+              Username
+            </Text>
+            <TextInput
+              placeholderTextColor={"gray"}
+              underlineColor="gray"
+              style={styles.input}
+              label="Email"
+              placeholder="Enter your username"
+              onChangeText={(value) => handleChange("email", value)}
+              textContentType="username"
+            />
+            <Text
+              style={{
+                fontSize: 18,
+                marginBottom: config.hp(".5%"),
+                color: theme.colors.primary,
+              }}
+            >
+              Password
+            </Text>
+            <TextInput
+              placeholderTextColor={"gray"}
+              underlineColor="gray"
+              style={styles.input}
+              label="Password"
+              placeholder="Enter your Password"
+              onChangeText={(value) => handleChange("password", value)}
+              value={user.password}
+              secureTextEntry
+              textContentType="password"
+            />
+            <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
+              <Text style={{ paddingVertical: 10 }}>Forgot Password?</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* <View style={styles.switchContainer}>
+            <Text style={styles.switchText}>Remember User ID</Text>
+            <Switch
+              trackColor={{ false: "#767577", true: "rgb(14, 164, 75)" }}
+              thumbColor={isEnabled ? "white" : "#f4f3f4"}
+              ios_backgroundColor="#3e3e3e"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View> */}
+
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              activeOpacity={0.85}
+              onPress={() => handleSubmit()}
+              style={styles.button}
+            >
+              <Text style={styles.buttonText}>Sign In with password</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setTab("Register")}>
+              <Text style={{ paddingVertical: 10 }}>
+                Need an account? Sign up
               </Text>
-              <View style={styles.container}>
-                <View style={styles.inputContainer}>
-                  <View style={styles.inputView}>
-                    <TextInput
-                      placeholderTextColor={"gray"}
-                      underlineColor="gray"
-                      style={styles.input}
-                      label="Email"
-                      placeholder="Enter your username"
-                      onChangeText={(value) => handleChange("email", value)}
-                      textContentType="username"
-                    />
-                  </View>
-
-                  <View style={styles.inputView}>
-                    <TextInput
-                      placeholderTextColor={"gray"}
-                      underlineColor="gray"
-                      style={styles.input}
-                      label="Password"
-                      placeholder="Enter your Password"
-                      onChangeText={(value) => handleChange("password", value)}
-                      value={user.password}
-                      secureTextEntry
-                      textContentType="password"
-                    />
-                    <TouchableOpacity
-                      onPress={() => navigation.navigate("Forgot")}
-                    >
-                      <Text style={{ paddingVertical: 10 }}>
-                        Forgot Password?
-                      </Text>
-                    </TouchableOpacity>
-                  </View>
-                </View>
-              </View>
-
-              <View style={styles.switchContainer}>
-                <Text style={styles.switchText}>Remember User ID</Text>
-                <Switch
-                  trackColor={{ false: "#767577", true: "rgb(14, 164, 75)" }}
-                  thumbColor={isEnabled ? "white" : "#f4f3f4"}
-                  ios_backgroundColor="#3e3e3e"
-                  onValueChange={toggleSwitch}
-                  value={isEnabled}
-                />
-              </View>
-
-              <View style={styles.buttonContainer}>
-                <TouchableOpacity
-                  activeOpacity={0.85}
-                  onPress={() => handleSubmit()}
-                  style={styles.button}
-                >
-                  <Text style={styles.buttonText}>Sign In with password</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => setTab("Register")}>
-                  <Text style={{ paddingVertical: 10 }}>
-                    Need an account? Sign up
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          )}
+            </TouchableOpacity>
+          </View>
         </View>
-        <ErrorModal
-          showErrorModal={showErrorModal}
-          closeErrorModal={closeErrorModal}
-          error={error}
-        ></ErrorModal>
-      </ScrollView>
-    </KeyboardAvoidingView>
+      )}
+
+      <ErrorModal
+        showErrorModal={showErrorModal}
+        closeErrorModal={closeErrorModal}
+        error={error}
+      ></ErrorModal>
+    </View>
   );
 };
 
