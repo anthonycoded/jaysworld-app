@@ -24,7 +24,7 @@ const ErrorModal = ({ showErrorModal, closeErrorModal, error, error2 }) => {
               source={require("../../../assets/lottieFiles/warning.json")}
             />
             <View style={{ alignItems: "center" }}>
-              <Text style={styles.modalText}>{error}</Text>
+              <Text style={styles.modalText}>{error?.error}</Text>
               <Text
                 style={{ paddingVertical: config.hp("1%"), paddingTop: 24 }}
               >
