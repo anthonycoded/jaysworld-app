@@ -7,19 +7,7 @@ import LottieView from "lottie-react-native";
 const FirstScreen = ({ handleNext }) => {
   return (
     <View style={{ width: "100%", height: "100%" }}>
-      <View
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          height: config.hp("35"),
-          paddingTop: 25,
-          width: "100%",
-          backgroundColor: theme.colors.primary,
-          borderBottomRightRadius: 25,
-          borderBottomLeftRadius: 25,
-          marginBottom: config.hp("4%"),
-        }}
-      >
+      <View style={styles.jumbotron}>
         <Text style={{ color: "white", fontSize: 20 }}>Jay's World</Text>
         <LottieView
           loop
@@ -112,6 +100,17 @@ const styles = StyleSheet.create({
     height: config.hp("40%"),
     width: "100%",
     marginBottom: config.hp("2%"),
+  },
+  jumbotron: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: config.hp("45"),
+    paddingTop: 25,
+    width: "100%",
+    backgroundColor: theme.colors.primary,
+    borderBottomRightRadius: 45,
+    borderBottomLeftRadius: 45,
+    marginBottom: config.hp("4%"),
   },
   image: {
     width: config.wp("80%"),
