@@ -11,16 +11,21 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/4a91db71-0d24-41fb-92df-d87e72931240"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "bundleIdentifier": "com.jays-world.jaysworld",
       "buildNumber": "1.2.1",
       "supportsTablet": false,
       "requireFullScreen": true,
       "infoPlist": {
-        "UIBackgroundModes": ["audio"],
+        "UIBackgroundModes": [
+          "audio"
+        ],
         "NSCameraUsageDescription": "This app uses the camera for scanning card details for payments "
       }
     },
@@ -39,6 +44,9 @@
       "eas": {
         "projectId": "4a91db71-0d24-41fb-92df-d87e72931240"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
