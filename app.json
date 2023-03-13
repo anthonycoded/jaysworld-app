@@ -1,47 +1,44 @@
 {
-    "expo": {
-        "name": "Jays-World",
-        "slug": "JaysWorld-App",
-        "version": "1.2.8",
-        "orientation": "portrait",
-        "icon": "./assets/icon.png",
-        "splash": {
-            "image": "./assets/earth.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": ["**/*"],
-
-
-        "ios": {
-            "bundleIdentifier": "com.jays-world.jaysworld",
-            "buildNumber": "1.2.1",
-            "supportsTablet": false,
-
-
-            "requireFullScreen": true,
-            "infoPlist": {
-                "UIBackgroundModes": ["audio"],
-                "NSCameraUsageDescription": "This app uses the camera for scanning card details for payments "
-
-            }
-
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/adaptive-icon.png",
-                "backgroundColor": "#FFFFFF"
-            },
-            "package": "com.jaysworld.jaysworld",
-            "versionCode": 1,
-            "publishManifestPath": "com.jays-world.jaysworld/manifest"
-        },
-        "web": {
-            "favicon": "./assets/favicon.png"
-        }
-
+  "expo": {
+    "name": "Jays-World",
+    "slug": "JaysWorld-App",
+    "version": "1.2.8",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/earth.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.jays-world.jaysworld",
+      "buildNumber": "1.2.1",
+      "supportsTablet": false,
+      "requireFullScreen": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["audio"],
+        "NSCameraUsageDescription": "This app uses the camera for scanning card details for payments "
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.jaysworld.jaysworld",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4a91db71-0d24-41fb-92df-d87e72931240"
+      }
     }
+  }
 }
